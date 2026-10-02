@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#080808" />
+
+<title>JAN MOMO'S &amp; CHICKEN SOUP | Fresh Momos &amp; Chicken</title>
+<meta name="description" content="Order fresh momos, chicken favourites, Korean cheese corn dogs and delicious sauces from JAN MOMO'S &amp; CHICKEN SOUP." />
+<meta name="keywords" content="momos, JAN MOMO'S, chicken momos, fried momos, steamed momos, korean cheese corn dog, dynamite momos, chilli oil, fast food Pakistan" />
+<meta name="author" content="Junaid Sheikh" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="./index.html" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant" />
+<meta property="og:site_name" content="JAN MOMO'S &amp; CHICKEN SOUP" />
+<meta property="og:title" content="JAN MOMO'S &amp; CHICKEN SOUP | The Name Of Real Taste" />
+<meta property="og:description" content="Order fresh momos, chicken favourites, Korean cheese corn dogs and delicious sauces from JAN MOMO'S &amp; CHICKEN SOUP." />
+<meta property="og:image" content="assets/images/fry-momos.jpg" />
+<meta property="og:locale" content="en_PK" />
+
+<!-- Icons -->
+<link rel="icon" type="image/png" href="assets/icons/logo.png" />
+<link rel="apple-touch-icon" href="assets/icons/logo.png" />
+
+<!-- Fonts: lightweight single-family import (Poppins) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ============================================================
+     32. LOADING SCREEN
+     ============================================================ -->
+<div class="loader" id="loader" role="status" aria-live="polite" aria-label="Loading JAN MOMO'S">
+  <div class="loader__inner">
+    <div class="loader__ring" aria-hidden="true"><span></span></div>
+    <p class="loader__logo">JAN&nbsp;MOMO'S</p>
+    <p class="loader__sub">The Name Of Real Taste</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     1. ANNOUNCEMENT BAR
+     ============================================================ -->
+<div class="announce" id="announce">
+  <div class="container announce__inner">
+    <p class="announce__text">
+      <span class="announce__full">&#128293; Fresh Momos &bull; Fast Service &bull; Safe Delivery &bull; <strong>4 PM &ndash; 12 AM</strong></span>
+      <span class="announce__short">&#128293; Fresh Momos &bull; 4 PM &ndash; 12 AM</span>
+    </p>
+  </div>
+</div>
+
+<!-- ============================================================
+     2. NAVBAR
+     ============================================================ -->
+<header class="header" id="header">
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="navbar__inner">
+
+      <a class="brand" href="#home" aria-label="JAN MOMO'S and Chicken Soup, home">
+        <span class="brand__mark" aria-hidden="true">
+          <img src="assets/icons/logo.png" alt="" width="48" height="48" decoding="async" />
+        </span>
+        <span class="brand__text">
+          <span class="brand__line1">JAN</span>
+          <span class="brand__line2">MOMO'S</span>
+        </span>
+      </a>
+
+      <ul class="navlinks" id="navlinks" aria-label="Sections">
+        <li><a class="navlink is-active" href="#home" data-nav="home">Home</a></li>
+        <li><a class="navlink" href="#menu" data-nav="menu">Menu</a></li>
+        <li><a class="navlink" href="#deals" data-nav="deals">Deals</a></li>
+        <li><a class="navlink" href="#about" data-nav="about">About</a></li>
+        <li><a class="navlink" href="#contact" data-nav="contact">Contact</a></li>
+        <li class="navlinks__indicator" id="navIndicator" aria-hidden="true"></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <button class="iconbtn iconbtn--cart" type="button" id="cartOpenBtn" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 4h2.2l2.3 11.2A2 2 0 0 0 9.46 17H18a2 2 0 0 0 1.94-1.55L21.5 8H6.2"/><circle cx="10" cy="20" r="1.6"/><circle cx="17.5" cy="20" r="1.6"/></svg>
+          <span class="cart-badge" id="navCartBadge" hidden>0</span>
+        </button>
+        <button class="iconbtn burger" type="button" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile menu drawer. The backdrop is a sibling of the wrap (not a child)
+       so a tap outside the panel lands on it and closes the drawer. -->
+  <div class="navbackdrop" id="navBackdrop" hidden></div>
+  <div class="mobilemenu-wrap" id="mobileMenuWrap">
+    <div class="mobilemenu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+
+      <div class="mobilemenu__head">
+        <a class="mobilemenu__brand" href="#home" data-mnav="home" aria-label="JAN MOMO'S and Chicken Soup, home">
+          <span class="mobilemenu__mark"><img src="assets/icons/logo.png" alt="" width="34" height="34" decoding="async" /></span>
+          <span class="mobilemenu__wordmark"><span>JAN</span><span>MOMO'S</span></span>
+        </a>
+        <button class="mobilemenu__close" type="button" id="mobileMenuClose" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <ul class="mobilemenu__list">
+        <li><a href="#home"    data-mnav="home">Home</a></li>
+        <li><a href="#menu"    data-mnav="menu">Menu</a></li>
+        <li><a href="#deals"   data-mnav="deals">Deals</a></li>
+        <li><a href="#about"   data-mnav="about">About</a></li>
+        <li><a href="#contact" data-mnav="contact">Contact</a></li>
+      </ul>
+
+      <a class="mobilemenu__cta" href="#menu" data-mnav="order">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 4h2.2l2.3 11.2A2 2 0 0 0 9.46 17H18a2 2 0 0 0 1.94-1.55L21.5 8H6.2"/><circle cx="10" cy="20" r="1.6"/><circle cx="17.5" cy="20" r="1.6"/></svg>
+        <span>Order Now</span>
+      </a>
+
+      <div class="mobilemenu__spacer" aria-hidden="true"></div>
+
+      <div class="mobilemenu__foot">
+        <p class="mobilemenu__hours">4:00 PM &ndash; 12:00 AM</p>
+        <a class="mobilemenu__phone" href="tel:03219997899">0321-9997989</a>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ==========================================================
+       3. HERO
+       ========================================================== -->
+  <section class="hero" id="home" aria-labelledby="heroTitle">
+    <div class="hero__bg" aria-hidden="true">
+      <span class="hero__curve hero__curve--a"></span>
+      <span class="hero__curve hero__curve--b"></span>
+      <span class="hero__dots"></span>
+    </div>
+
+    <div class="container hero__inner">
+
+      <div class="hero__content">
+        <p class="hero__eyebrow"><span class="dot"></span> Freshly Made &bull; Daily 4 PM to 12 AM</p>
+
+        <h1 class="hero__title" id="heroTitle">
+          <span class="hero__title-line">The Name Of</span>
+          <span class="hero__title-line hero__title-line--accent">Real Taste</span>
+        </h1>
+
+        <p class="hero__sub">Fresh Momos, Crispy Chicken &amp; Delicious Flavours Made Fresh For You.</p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="#menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h2l2.4 11.1A2 2 0 0 0 11.35 17H18.6a2 2 0 0 0 1.95-1.5L21.7 9H7.2"/><circle cx="10.5" cy="20" r="1.5"/><circle cx="17.5" cy="20" r="1.5"/></svg>
+            Order Now
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#menu">Explore Menu</a>
+        </div>
+
+        <ul class="hero__points">
+          <li>&#11088; Fresh &amp; Hygienic</li>
+          <li>&#128293; Made Fresh</li>
+          <li>&#128717; Safe Delivery</li>
+        </ul>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__plate" aria-hidden="true"></div>
+        <figure class="hero__imgwrap">
+          <img class="hero__img" id="heroImage" alt="Close-up of crispy fried momos served hot with sauces" width="900" height="900" fetchpriority="high" />
+        </figure>
+
+        <div class="floatlabel floatlabel--hot">
+          <span class="floatlabel__icon">&#128293;</span>
+          <span class="floatlabel__text">Hot &amp; Fresh</span>
+        </div>
+        <div class="floatlabel floatlabel--fav">
+          <span class="floatlabel__icon">🥟</span>
+          <span class="floatlabel__text">Customer Favorite</span>
+        </div>
+        <span class="hero__goldline" aria-hidden="true"></span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       4. FEATURE STRIP
+       ========================================================== -->
+  <section class="features" id="features" aria-label="Service highlights">
+    <div class="container">
+      <ul class="features__grid" id="featureGrid"><!-- rendered by JS --></ul>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       5 + 6 + 28. MENU  (categories, search & full menu)
+       ========================================================== -->
+  <section class="section section--dark" id="menu" aria-labelledby="menuTitle">
+    <div class="container">
+      <header class="sechead">
+        <p class="sechead__kicker">Browse</p>
+        <h2 class="sechead__title" id="menuTitle">What Are You Craving?</h2>
+        <p class="sechead__sub">Pick a category or search the full menu &mdash; it filters instantly, no page reload. Tap any item to customise quantity, extra sauce and special instructions.</p>
+      </header>
+
+      <div class="toolbar">
+        <div class="catbar" id="categoryBar" role="tablist" aria-label="Product categories">
+          <button class="chip is-active" type="button" role="tab" aria-selected="true" data-category="all">All</button>
+          <button class="chip" type="button" role="tab" aria-selected="false" data-category="momos">Momo's</button>
+          <button class="chip" type="button" role="tab" aria-selected="false" data-category="new">New Items</button>
+          <button class="chip" type="button" role="tab" aria-selected="false" data-category="specials">Specials</button>
+          <button class="chip" type="button" role="tab" aria-selected="false" data-category="sauces">Sauces</button>
+        </div>
+
+        <div class="search">
+          <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.4-3.4"/></svg>
+          <input class="search__input" id="searchInput" type="search" placeholder="Search your favourite food..." aria-label="Search your favourite food" autocomplete="off" />
+          <button class="search__clear" id="searchClear" type="button" aria-label="Clear search" hidden>&times;</button>
+        </div>
+      </div>
+
+      <div class="menuhead">
+        <p class="menuhead__count" id="menuCount" role="status" aria-live="polite"></p>
+        <p class="menuhead__fee">Delivery Fee: <strong>Rs. 100</strong> &bull; Cash on Delivery</p>
+      </div>
+
+      <div class="grid grid--4" id="menuGrid"><!-- rendered by JS --></div>
+
+      <div class="empty" id="noResults" hidden>
+        <p class="empty__icon" aria-hidden="true">&#128269;</p>
+        <p class="empty__title">No products found</p>
+        <p class="empty__text">Try a different word, or clear the filters to see the full menu.</p>
+        <button class="btn btn--ghost" type="button" id="resetFilters">Reset Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       7. FEATURED PRODUCTS
+       ========================================================== -->
+  <section class="section" id="featured" aria-labelledby="featTitle">
+    <div class="container">
+      <header class="sechead">
+        <p class="sechead__kicker">&#128293; Best Sellers</p>
+        <h2 class="sechead__title" id="featTitle">Customer Favorites</h2>
+        <p class="sechead__sub">The four most ordered items on our menu.</p>
+      </header>
+      <div class="grid grid--4" id="featuredGrid"><!-- rendered by JS --></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       8. DEALS
+       ========================================================== -->
+  <section class="section section--dark" id="deals" aria-labelledby="dealsTitle">
+    <div class="container">
+      <header class="sechead">
+        <p class="sechead__kicker">Limited Offers</p>
+        <h2 class="sechead__title" id="dealsTitle">Deals &amp; Combos</h2>
+        <p class="sechead__sub">These offers are being prepared. Follow us so you hear about them first.</p>
+      </header>
+
+      <div class="grid grid--3" id="dealsGrid"><!-- rendered by JS --></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       9. ABOUT
+       ========================================================== -->
+  <section class="section" id="about" aria-labelledby="aboutTitle">
+    <div class="container about">
+      <div class="about__visual">
+        <span class="about__blob" aria-hidden="true"></span>
+        <img class="about__img" data-img-for="fry-4" alt="Freshly prepared momos ready to be served at JAN MOMO'S" width="800" height="800" loading="lazy" />
+        <div class="about__badge">
+          <strong>4 PM</strong>
+          <span>&ndash; 12 AM</span>
+        </div>
+      </div>
+
+      <div class="about__body">
+        <p class="sechead__kicker">About Us</p>
+        <h2 class="sechead__title sechead__title--left" id="aboutTitle">Real Taste. Fresh Every Time.</h2>
+        <p class="about__text">JAN MOMO'S &amp; CHICKEN SOUP brings together fresh ingredients, delicious momos, crispy favourites and flavorful sauces. Every order is prepared with care and served hot.</p>
+        <ul class="about__list">
+          <li>Freshly steamed &amp; fried to order</li>
+          <li>Hygienic kitchen, clean ingredients</li>
+          <li>Signature chilli oil &amp; dynamite sauce</li>
+          <li>Quick and reliable home delivery</li>
+        </ul>
+        <a class="btn btn--primary" href="#menu">See The Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       10. WHY CHOOSE US
+       ========================================================== -->
+  <section class="section section--dark" id="why" aria-labelledby="whyTitle">
+    <div class="container">
+      <header class="sechead">
+        <p class="sechead__kicker">Our Promise</p>
+        <h2 class="sechead__title" id="whyTitle">Why Choose Us</h2>
+      </header>
+      <div class="grid grid--4" id="whyGrid"><!-- rendered by JS --></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       12 (info) DELIVERY INFORMATION
+       ========================================================== -->
+  <section class="section" id="delivery" aria-labelledby="deliveryTitle">
+    <div class="container">
+      <header class="sechead">
+        <p class="sechead__kicker">Ordering Info</p>
+        <h2 class="sechead__title" id="deliveryTitle">Delivery Information</h2>
+      </header>
+
+      <div class="grid grid--3">
+        <article class="infocard">
+          <span class="infocard__icon" aria-hidden="true">&#128717;</span>
+          <h3 class="infocard__title">Safe Delivery</h3>
+          <p class="infocard__text">Your order is packed hot and sealed, then delivered safely to your doorstep.</p>
+        </article>
+        <article class="infocard">
+          <span class="infocard__icon" aria-hidden="true">&#128176;</span>
+          <h3 class="infocard__title">Flat Rs. 100 Fee</h3>
+          <p class="infocard__text">A single flat delivery fee of Rs. 100 is added at checkout. No hidden charges.</p>
+        </article>
+        <article class="infocard">
+          <span class="infocard__icon" aria-hidden="true">&#128179;</span>
+          <h3 class="infocard__title">Cash on Delivery</h3>
+          <p class="infocard__text">Pay in cash when your food arrives. No online payment is required.</p>
+        </article>
+        <article class="infocard">
+          <span class="infocard__icon" aria-hidden="true">&#128337;</span>
+          <h3 class="infocard__title">Open 4 PM &ndash; 12 AM</h3>
+          <p class="infocard__text">We accept orders every day during our opening hours, 4:00 PM to 12:00 AM.</p>
+        </article>
+        <article class="infocard">
+          <span class="infocard__icon" aria-hidden="true">&#128205;</span>
+          <h3 class="infocard__title">How To Order</h3>
+          <p class="infocard__text">Add items to your cart, fill in your details, and place your order right here on the website.</p>
+        </article>
+        <article class="infocard">
+          <span class="infocard__icon" aria-hidden="true">&#128172;</span>
+        <h3 class="infocard__title">Order In One Tap</h3>
+        <p class="infocard__text">Place your order directly on the website and get an instant order ID and receipt. No WhatsApp needed.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       11. CONTACT
+       ========================================================== -->
+  <section class="section section--dark section--contact" id="contact" aria-labelledby="contactTitle">
+    <div class="container">
+      <header class="sechead">
+        <p class="sechead__kicker">Get In Touch</p>
+        <h2 class="sechead__title" id="contactTitle">Contact Us</h2>
+      </header>
+
+      <div class="contact">
+        <div class="contact__card">
+          <span class="contact__brand">JAN MOMO'S</span>
+          <h3 class="contact__title">JAN MOMO'S &amp; CHICKEN SOUP</h3>
+          <p class="contact__person">Junaid Sheikh</p>
+
+          <a class="contact__phone" href="tel:03219997899">
+            <span aria-hidden="true">&#128222;</span> 0321-9997989
+          </a>
+
+          <p class="contact__hours"><span aria-hidden="true">&#128337;</span> Opening Hours: <strong>4:00 PM &ndash; 12:00 AM</strong></p>
+
+          <div class="contact__btns">
+            <a class="btn btn--primary" href="tel:03219997899">Call Now</a>
+            <a class="btn btn--gold" href="#" data-wa="general" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+            <a class="btn btn--ghost" href="#menu">Order Online</a>
+          </div>
+
+          <ul class="socials" id="socialList" aria-label="Social media">
+            <!-- rendered by JS -->
+          </ul>
+        </div>
+
+        <div class="contact__map" role="img" aria-label="JAN MOMO'S and Chicken Soup delivery area illustration">
+          <div class="contact__mapinner">
+            <span class="contact__pulse" aria-hidden="true"></span>
+            <span class="contact__pin" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 22s7-6.1 7-11.5A7 7 0 0 0 5 10.5C5 15.9 12 22 12 22Z"/><circle cx="12" cy="10.5" r="2.6"/></svg>
+            </span>
+            <p class="contact__maptitle">Delivery Zone</p>
+            <p class="contact__maptext">We deliver to your area. Call us to confirm your location.</p>
+            <p class="contact__maphours">Daily &bull; 4:00 PM &ndash; 12:00 AM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+       12. FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container footer__grid">
+
+    <div class="footer__brand">
+      <span class="footer__logo">JAN MOMO'S</span>
+      <span class="footer__sub">MOMO'S &amp; CHICKEN SOUP</span>
+      <p class="footer__tag">"The Name Of Real Taste"</p>
+      <ul class="socials" id="socialListFooter" aria-label="Social media"></ul>
+    </div>
+
+    <nav class="footer__col" aria-label="Footer navigation">
+      <h3 class="footer__head">Explore</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#deals">Deals</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__col">
+      <h3 class="footer__head">Contact</h3>
+      <ul>
+        <li>Junaid Sheikh</li>
+        <li><a href="tel:03219997899">0321-9997989</a></li>
+        <li><a href="#" data-wa="general" rel="noopener noreferrer" target="_blank">WhatsApp Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h3 class="footer__head">Opening Hours</h3>
+      <ul>
+        <li>Monday &ndash; Sunday</li>
+        <li><strong>4:00 PM &ndash; 12:00 AM</strong></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottominner">
+      <p>&copy; 2026 JAN MOMO'S &amp; CHICKEN SOUP. All Rights Reserved.</p>
+      <p class="footer__demo">Frontend demo &bull; Orders are placed and stored on this device.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     13. STICKY MOBILE CART
+   ============================================================ -->
+<button class="stickycart" id="stickyCartBtn" type="button" hidden aria-label="View cart and checkout">
+  <span class="stickycart__left">
+    <span class="stickycart__count" id="stickyCartCount">0 items</span>
+    <span class="stickycart__total" id="stickyCartTotal">Rs. 0</span>
+  </span>
+  <span class="stickycart__right">View Cart <span aria-hidden="true">&rarr;</span></span>
+</button>
+
+<!-- ============================================================
+     13. CART DRAWER
+     ============================================================ -->
+<div class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+  <div class="drawer__panel">
+    <header class="drawer__head">
+      <h2 class="drawer__title" id="cartTitle">&#128722; Your Order</h2>
+      <button class="iconbtn iconbtn--close" type="button" data-close-cart aria-label="Close cart">&times;</button>
+    </header>
+
+    <div class="drawer__body" id="cartBody"><!-- rendered by JS --></div>
+
+    <footer class="drawer__foot" id="cartFoot" hidden>
+      <div class="totals">
+        <p class="totals__row"><span>Subtotal</span> <strong id="cartSubtotal">Rs. 0</strong></p>
+        <p class="totals__row"><span>Delivery Fee</span> <strong id="cartDelivery">Rs. 0</strong></p>
+        <p class="totals__row totals__row--grand"><span>Total</span> <strong id="cartTotal">Rs. 0</strong></p>
+      </div>
+      <button class="btn btn--primary btn--block btn--lg" type="button" id="checkoutBtn">Proceed To Checkout</button>
+      <button class="drawer__clear" type="button" id="clearCartBtn">Clear cart</button>
+    </footer>
+  </div>
+  <div class="drawer__backdrop" data-close-cart></div>
+</div>
+
+<!-- ============================================================
+     11. PRODUCT DETAILS MODAL
+     ============================================================ -->
+<div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="pmName" aria-hidden="true">
+  <div class="modal__box modal__box--product" role="document">
+    <button class="iconbtn iconbtn--close modal__close" type="button" data-close-product aria-label="Close product details">&times;</button>
+
+    <div class="pm">
+      <div class="pm__media">
+        <img class="pm__img" id="pmImage" alt="" width="700" height="700" />
+        <span class="badge pm__badge" id="pmBadge" hidden>Popular</span>
+      </div>
+
+      <div class="pm__body">
+        <p class="pm__cat" id="pmCategory">Momo's</p>
+        <h2 class="pm__name" id="pmName">Product</h2>
+        <p class="pm__variant" id="pmVariant">2 Piece</p>
+        <p class="pm__desc" id="pmDesc">Description</p>
+        <p class="price price--lg" id="pmPrice"><span class="price__cur">Rs.</span> 0</p>
+
+        <div class="field">
+          <span class="field__label" id="pmQtyLabel">Quantity</span>
+          <div class="qty" role="group" aria-labelledby="pmQtyLabel">
+            <button class="qty__btn" type="button" id="pmQtyMinus" aria-label="Decrease quantity">&minus;</button>
+            <input class="qty__value" id="pmQty" type="number" min="1" value="1" inputmode="numeric" aria-label="Quantity" />
+            <button class="qty__btn" type="button" id="pmQtyPlus" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <div class="field" id="pmSauceField">
+          <span class="field__label" id="pmSauceLabel">Extra Sauce</span>
+          <div class="saucelist" id="pmSauceList" role="radiogroup" aria-labelledby="pmSauceLabel"><!-- rendered by JS --></div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="pmNotes">Special Instructions</label>
+          <textarea class="field__control field__control--area" id="pmNotes" rows="2" maxlength="140" placeholder="Less spicy, extra crispy, no onion..."></textarea>
+        </div>
+
+        <button class="btn btn--primary btn--block btn--lg pm__add" type="button" id="pmAdd">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal__backdrop" data-close-product></div>
+</div>
+
+<!-- ============================================================
+     16 + 17. CHECKOUT
+     ============================================================ -->
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="coTitle" aria-hidden="true">
+  <div class="modal__box modal__box--checkout" role="document">
+    <button class="iconbtn iconbtn--close modal__close" type="button" data-close-checkout aria-label="Close checkout">&times;</button>
+
+    <header class="co__head">
+      <h2 class="co__title" id="coTitle">Complete Your Order</h2>
+      <p class="co__sub">Fill in your details and place your order. Pay cash on delivery.</p>
+    </header>
+
+    <form class="co__form" id="checkoutForm" novalidate>
+      <div class="co__cols">
+        <div class="field">
+          <label class="field__label" for="coName">Full Name <span class="req" aria-hidden="true">*</span></label>
+          <input class="field__control" id="coName" name="name" type="text" autocomplete="name" placeholder="e.g. Ahmed Khan" required />
+          <p class="field__error" id="errName" role="alert" hidden>Please enter your full name.</p>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="coPhone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+          <input class="field__control" id="coPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="03XX XXXXXXX" required />
+          <p class="field__error" id="errPhone" role="alert" hidden>Enter a valid Pakistani number, e.g. 03219997899</p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="coAddress">Delivery Address <span class="req" aria-hidden="true">*</span></label>
+        <textarea class="field__control field__control--area" id="coAddress" name="address" rows="2" placeholder="House / flat, street, area, city" required></textarea>
+        <p class="field__error" id="errAddress" role="alert" hidden>Please enter your delivery address.</p>
+      </div>
+
+      <div class="co__cols">
+        <div class="field">
+          <label class="field__label" for="coLandmark">Landmark</label>
+          <input class="field__control" id="coLandmark" name="landmark" type="text" placeholder="e.g. Near Jamia Masjid" />
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="coNotes">Order Notes</label>
+          <input class="field__control" id="coNotes" name="notes" type="text" maxlength="140" placeholder="Less spicy, extra sauce..." />
+        </div>
+      </div>
+
+      <fieldset class="field field--pay">
+        <legend class="field__label">Payment Method</legend>
+        <label class="payopt">
+          <input type="radio" name="payment" value="Cash on Delivery" checked />
+          <span class="payopt__dot" aria-hidden="true"></span>
+          <span class="payopt__text">
+            <strong>Cash on Delivery</strong>
+            <small>Pay in cash when your order arrives</small>
+          </span>
+        </label>
+      </fieldset>
+
+      <div class="co__summary" id="coSummary">
+        <h3 class="co__sumtitle">Your Order</h3>
+        <ul class="co__items" id="coItems"><!-- rendered by JS --></ul>
+        <div class="totals">
+          <p class="totals__row"><span>Subtotal</span> <strong id="coSubtotal">Rs. 0</strong></p>
+          <p class="totals__row"><span>Delivery</span> <strong id="coDelivery">Rs. 0</strong></p>
+          <p class="totals__row totals__row--grand"><span>Total</span> <strong id="coTotal">Rs. 0</strong></p>
+        </div>
+      </div>
+
+      <button class="btn btn--primary btn--block btn--lg" type="submit" id="placeOrderBtn">Place Order</button>
+      <p class="co__safe">&#128274; Your details are only used to prepare this order.</p>
+    </form>
+  </div>
+  <div class="modal__backdrop" data-close-checkout></div>
+</div>
+
+<!-- ============================================================
+     19. ORDER RECEIPT
+     ============================================================ -->
+<div class="modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle" aria-hidden="true">
+  <div class="modal__box modal__box--success" role="document">
+    <div class="success">
+      <p class="success__emoji" aria-hidden="true">&#127881;</p>
+      <h2 class="success__title" id="successTitle">Order Placed</h2>
+      <p class="success__text">Your order has been placed successfully on our website.</p>
+
+      <div class="receipt__head">
+        <div class="receipt__id">
+          <span class="receipt__idLabel">Order ID</span>
+          <strong class="receipt__idValue" id="successOrderId">JAN-0000</strong>
+        </div>
+        <span class="receipt__status" id="successStatus">Order Received</span>
+      </div>
+
+      <dl class="receipt__meta">
+        <div class="receipt__metaRow">
+          <dt>Placed</dt>
+          <dd id="successDate">&mdash;</dd>
+        </div>
+        <div class="receipt__metaRow">
+          <dt>Estimated delivery</dt>
+          <dd id="successEta">&mdash;</dd>
+        </div>
+      </dl>
+
+      <section class="receipt">
+        <h3 class="receipt__heading">Order Summary</h3>
+        <ul class="receipt__items" id="receiptItems"></ul>
+        <div class="receipt__totals" id="receiptTotals"></div>
+        <p class="success__total">Order Total: <strong id="successTotal">Rs. 0</strong></p>
+      </section>
+
+      <section class="receipt">
+        <h3 class="receipt__heading">Delivery Details</h3>
+        <div class="receipt__details" id="receiptCustomer"></div>
+      </section>
+
+      <p class="success__note">Please keep your Order ID for reference. Pay cash on delivery.</p>
+
+      <div class="success__btns">
+        <button class="btn btn--primary btn--block btn--lg" type="button" id="successPrint">Print Receipt</button>
+        <button class="btn btn--ghost btn--block btn--lg" type="button" id="successBack">Back To Menu</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal__backdrop" data-close-success></div>
+</div>
+
+<!-- ============================================================
+     31. TOASTS
+     ============================================================ -->
+<div class="toasts" id="toasts" role="status" aria-live="polite" aria-atomic="false"></div>
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="script.js"></script>
+</body>
+</html>
